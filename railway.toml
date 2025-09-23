@@ -2,11 +2,12 @@
 builder = "nixpacks"
 
 [build.nixpacksConfig]
-phases.build.cmds = ["mvn clean package -DskipTests"]
+phases.build.cmds = ["mvn clean package -DskipTests -Dmaven.compiler.source=17 -Dmaven.compiler.target=17"]
 
 [deploy]
-startCommand = "java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/demo-1.0.0.jar"
+startCommand = "java -Dserver.port=$PORT -Dspring.profiles.active=prod -Djava.security.egd=file:/dev/./urandom -jar target/demo-1.0.0.jar"
 
 [environment]
 SPRING_PROFILES_ACTIVE = "prod"
 PORT = "8080"
+JAVA_VERSION = "17"

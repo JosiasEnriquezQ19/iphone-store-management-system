@@ -18,12 +18,12 @@
     <description>Sistema de gestión para tienda de iPhones - Proyecto Spring Boot</description>
     
     <properties>
-        <java.version>21</java.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
     </properties>
     
     <dependencies>
@@ -68,7 +68,7 @@
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
         
-        <!-- Lombok - TEMPORALMENTE DESHABILITADO PARA JAVA 24 -->
+        <!-- Lombok - REMOVIDO POR INCOMPATIBILIDAD -->
         <!--
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -155,20 +155,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <release>${java.version}</release>
-                    <compilerArgs>
-                        <arg>--add-opens</arg>
-                        <arg>java.base/java.lang=ALL-UNNAMED</arg>
-                    </compilerArgs>
-                    <!-- TEMPORALMENTE DESHABILITADO PARA JAVA 24 -->
-                    <!--
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                    -->
+                    <!-- LOMBOK REMOVIDO -->
                 </configuration>
             </plugin>
             
@@ -186,7 +173,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- TEMPORALMENTE DESHABILITADO PARA JAVA 24 -->
+                <!-- LOMBOK REMOVIDO -->
                 <!--
                 <configuration>
                     <excludes>
