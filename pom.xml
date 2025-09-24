@@ -21,6 +21,7 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <lombok.version>1.18.34</lombok.version>
@@ -154,7 +155,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <release>${java.version}</release>
+                    <!-- Se usa maven.compiler.release en properties en lugar de release aquí -->
                     <!-- LOMBOK REMOVIDO -->
                 </configuration>
             </plugin>

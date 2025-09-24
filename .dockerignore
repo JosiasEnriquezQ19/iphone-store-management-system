@@ -1,0 +1,48 @@
+# Archivos y carpetas a ignorar al construir la imagen Docker
+
+# Archivos generados por Maven
+target/
+!target/demo-1.0.0.jar
+
+# Directorios de desarrollo
+.idea/
+.vscode/
+.settings/
+.metadata/
+.project
+.classpath
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+
+# Archivos de git
+.git/
+.gitignore
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos específicos del proyecto que no necesitan estar en la imagen
+README.md
+HELP.md
+TRANSACCIONES_PEDIDO_DOCUMENTACION.md
+*.md
+
+# Scripts de desarrollo
+*.sh
+*.bat
+*.ps1
+
+# Archivos de Railway específicos (excepto los necesarios)
+railway.toml
+.railway/
+
+# Directorios de tests
+src/test/

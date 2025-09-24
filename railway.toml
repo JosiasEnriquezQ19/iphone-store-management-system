@@ -1,11 +1,11 @@
 [build]
-builder = "nixpacks"
-
-[build.nixpacksConfig]
-phases.build.cmds = ["mvn clean package -DskipTests -Dmaven.compiler.source=17 -Dmaven.compiler.target=17"]
+builder = "DOCKERFILE"
+watchPatterns = ["src/**", "Dockerfile"]
 
 [deploy]
-startCommand = "java -Dserver.port=$PORT -Dspring.profiles.active=prod -Djava.security.egd=file:/dev/./urandom -jar target/demo-1.0.0.jar"
+healthcheckPath = "/"
+healthcheckTimeout = "300s"
+restartPolicyType = "ON_FAILURE"
 
 [environment]
 SPRING_PROFILES_ACTIVE = "prod"
